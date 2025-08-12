@@ -3,237 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Esencia de la Existencia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Cinzel:wght@400;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Mensaje Importante</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'midnight-purple': '#1a1a2e',
-                        'phantom-indigo': '#16213e',
-                        'celestial-gold': '#e7c495',
-                        'luminous-white': '#f0f7ee',
-                        'mystic-silver': '#a9a9a9',
-                        'twilight-blue': '#0f3460',
-                        'velvet-red': '#e94560'
-                    },
-                    fontFamily: {
-                        'seraph': ['Mate SC', 'serif'],
-                        'scroll': ['Cinzel', 'serif'],
-                        'modern': ['Montserrat', 'sans-serif']
-                    },
-                    animation: {
-                        'fadeInOut': 'fadeInOut 8s ease-in-out infinite',
-                        'float': 'float 5s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate'
-                    },
-                    keyframes: {
-                        fadeInOut: {
-                            '0%, 100%': { opacity: '0.15' },
-                            '50%': { opacity: '1' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        glow: {
-                            '0%': { 'text-shadow': '0 0 5px rgba(231, 196, 149, 0.5)' },
-                            '100%': { 'text-shadow': '0 0 15px rgba(231, 196, 149, 0.8), 0 0 25px rgba(231, 196, 149, 0.6)' }
-                        }
-                    }
-                }
-            }
+    <style>
+        /* Estilos personalizados */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-    </script>
-    <style type="text/css">
-        html, body {
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
         }
+        
+        .text-gradient {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Deshabilitar selección de texto y clic derecho */
         body {
-            background-image: radial-gradient(circle at center, #0b0b1d 0%, #04040f 100%);
-            cursor: default;
-        }
-        #secure-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            pointer-events: none;
-        }
-        .security-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(233, 69, 96, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(233, 69, 96, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-        .imperfection {
-            position: absolute;
-            transform: rotate(45deg);
-            background: rgba(233, 69, 96, 0.05);
-            animation: fadeInOut 10s ease-in-out infinite;
-        }
-        .galaxy-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(162, 138, 255, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 80% 60%, rgba(59, 130, 246, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 50% 10%, rgba(124, 58, 237, 0.15) 0%, transparent 40%);
-            z-index: -1;
-            opacity: 0.7;
-        }
-        .cipher-default {
-            display: block;
-        }
-        .cipher-show {
-            display: none;
-        }
-        textarea, button, input {
-            outline: none !important;
-            border: none !important;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
         }
     </style>
 </head>
-<body class="relative font-modern text-luminous-white">
-    <!-- Galaxia de fondo -->
-    <div class="galaxy-bg"></div>
-    
-    <!-- Contenido principal -->
-    <div id="content" class="min-h-screen flex flex-col justify-center items-center px-6">
-        <div class="max-w-3xl w-full text-center space-y-12 relative z-10">
-            
-            <div class="mb-16 animate-float">
-                <h1 class="text-5xl md:text-7xl font-serif font-bold tracking-widest my-4 glitch-text">IRREVERSIBLE</h1>
-                <div class="h-1 w-32 bg-velvet-red mx-auto"></div>
-            </div>
-
-            <div class="animate-fade-in">
-                <blockquote class="text-xl md:text-3xl leading-relaxed italic mb-8 tracking-wide cipher-text transform transition duration-500">
-                    "Algunas verdades son destellos en el tiempo: efímeras por naturaleza, imposibles de capturar, permanentes en su trascendencia."
-                </blockquote>
-                <p class="text-mystic-silver uppercase text-sm tracking-widest mt-4">Fragmento N°- ###</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto my-16">
-                <div class="glitch-block" data-parallel-x="-0.05">
-                    <p class="text-base opacity-80">Lo esencial evade la visibilidad clásica. Camuflado en el espacio digital, su apariencia es solo el comienzo.</p>
-                </div>
-                <div class="glitch-block border-l-2 border-r-2 border-celestial-gold border-opacity-30 px-8" data-parallel-x="0">
-                    <p class="text-base opacity-80">Códigos entrelazados protegen la integridad del mensaje. Las barreras existen como hologramas de seguridad.</p>
-                </div>
-                <div class="glitch-block" data-parallel-x="0.05">
-                    <p class="text-base opacity-80">Cualquier intento de interferencia resultará en vacío. La estructura es múltiple, adaptable, imprevisible.</p>
-                </div>
-            </div>
-
-            <div class="mt-16 mb-6">
-                <p class="animate-glow text-celestial-gold opacity-90 font-scroll tracking-widest">TODO LO QUE VES, ES LO QUE HAY</p>
-                <div class="h-0.5 w-16 bg-celestial-gold bg-opacity-40 mx-auto mt-3"></div>
-            </div>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4" oncontextmenu="return false;">
+    <div class="max-w-4xl w-full fade-in">
+        <!-- Título grande con efecto gradiente -->
+        <h1 class="text-5xl md:text-7xl font-bold mb-8 text-center text-gradient">
+            UNA FARSA DESENMASCARADA
+        </h1>
+        
+        <!-- Contenedor del texto con efecto de vidrio -->
+        <div class="bg-gray-800 bg-opacity-50 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-gray-700">
+            <p class="text-xl md:text-2xl leading-relaxed text-gray-100">
+                <span class="font-bold text-3xl text-red-500">Una farsa desenmascarada</span>
+                <br><br>
+                Este supuesto "programador" de quinta categoría, que se jacta de habilidades que no posee, no es más que un oportunista que utiliza inteligencias artificiales para crear sus páginas y proyectos sin el menor esfuerzo ni originalidad. No solo carece de la destreza técnica que presume, sino que su actitud arrogante y su comportamiento hipócrita han alejado a quienes alguna vez confiaron en él.
+                <br><br>
+                Su falta de autenticidad y su tendencia a alardear de conocimientos que no tiene han generado rechazo entre colegas, clientes y amigos, quienes se han cansado de sus promesas vacías y su actitud prepotente. Este individuo no duda en cobrar por servicios que, en realidad, son realizados por una máquina, lo cual resulta profundamente deshonesto.
+                <br><br>
+                Mientras se pavonea como un experto, su trabajo no refleja más que una dependencia absoluta de herramientas automatizadas, sin aportar valor genuino ni creatividad. Es el colmo de la hipocresía: presentarse como un profesional competente cuando, en el fondo, no es más que un intermediario que lucra con el trabajo de algoritmos, sin añadir nada de su propia cosecha.
+                <br><br>
+                Las personas a su alrededor no tardan en darse cuenta de su verdadera naturaleza. Su actitud engreída, combinada con su incapacidad para cumplir con las expectativas que él mismo crea, lo ha convertido en una figura que inspira desconfianza y decepción. Aquellos que alguna vez colaboraron con él o buscaron sus servicios han terminado alejándose, hartos de su falta de humildad y de su costumbre de atribuirse méritos que no le corresponden.
+                <br><br>
+                En un mundo donde la autenticidad y el esfuerzo genuino son valorados, este personaje no hace más que demostrar que su "éxito" no es más que una fachada, una farsa que se desmorona ante el escrutinio de quienes valoran la verdadera competencia y la integridad.
+            </p>
+        </div>
+        
+        <!-- Efecto decorativo -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-purple-600 rounded-full filter blur-3xl opacity-20 mix-blend-multiply"></div>
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-600 rounded-full filter blur-3xl opacity-20 mix-blend-multiply"></div>
         </div>
     </div>
-    
-    <!-- Fondo de seguridad -->
-    <div id="secure-overlay">
-        <div class="security-grid"></div>
-        <div class="imperfection" style="top: 15%; left: 10%; width: 30px; height: 30px; animation-delay: 0s;"></div>
-        <div class="imperfection" style="top: 70%; left: 80%; width: 60px; height: 60px; animation-delay: 1s;"></div>
-        <div class="imperfection" style="top: 45%; left: 50%; width: 45px; height: 45px; animation-delay: 3s;"></div>
-    </div>
 
-    <!-- Protecciones de seguridad -->
-    <textarea class="absolute opacity-0 w-0 h-0" spellcheck="false">Protegido por codificación SPHINX-v9.4 © 2023 Temporal Signature Encrypted</textarea>
-    
-    <!-- Script para funcionalidad y seguridad -->
     <script>
-        // Parallax effect for text blocks
-        const glitchBlocks = document.querySelectorAll('.glitch-block');
-        
-        window.addEventListener('mousemove', e => {
-            const x = (window.innerWidth / 2 - e.pageX) / 50;
-            
-            glitchBlocks.forEach(block => {
-                const factor = parseFloat(block.dataset.parallelX);
-                block.style.transform = `translateX(${x * factor}px) translateZ(0)`;
-            });
-        });
-
-        // Page load effect
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                document.body.classList.add('loaded');
-            }, 300);
-        });
-
-        // Script de seguridad mejorado
-        const blockedKeys = [
-            'F12', 'F10', 'F11', 'ContextMenu', 
-            'Control', 'Alt', 'Shift',
-            'c', 'u', 's', 'p'
-        ];
-
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        
-        document.addEventListener('keydown', event => {
-            const pressedKey = event.key;
-            
-            // Block function keys and Ctrl combinations
-            if (blockedKeys.includes(pressedKey) || 
-                (event.ctrlKey && !['v', 'z', 'y'].includes(pressedKey)) ||
-                (event.metaKey && !['v', 'z', 'y'].includes(pressedKey))) {
-                event.preventDefault();
-                createSecurityAlert();
-            }
-            
-            // Simple visual effect to indicate blocked action
-            if (blockedKeys.includes(pressedKey) || event.ctrlKey || event.metaKey) {
-                document.body.style.backgroundColor = '#1a000f';
-                setTimeout(() => {
-                    document.body.style.backgroundColor = '';
-                }, 200);
+        // Deshabilitar teclas de acceso rápido para inspección
+        document.addEventListener('keydown', function(e) {
+            // Bloquear F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+                (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+                (e.ctrlKey && e.key === 'U')) {
+                e.preventDefault();
+                alert('Esta acción no está permitida');
             }
         });
-
-        // Create a visual security alert when something is blocked
-        function createSecurityAlert() {
-            const alertDiv = document.createElement('div');
-            alertDiv.innerHTML = `
-                <div class="absolute top-8 right-8 bg-velvet-red text-luminous-white py-3 px-6 rounded opacity-0 transform translate-y-4 transition-all duration-300 text-sm z-[9999] font-bold">
-                    ACCIÓN INTERRUMPIDA POR PROTECCIÓN
-                </div>
-            `;
-            document.body.appendChild(alertDiv);
-            const innerAlert = alertDiv.firstChild;
-            
-            setTimeout(() => {
-                innerAlert.classList.remove('opacity-0');
-                innerAlert.classList.remove('translate-y-4');
-            }, 10);
-            
-            setTimeout(() => {
-                innerAlert.classList.add('opacity-0');
-                innerAlert.classList.add('translate-y-4');
-                setTimeout(() => {
-                    alertDiv.remove();
-                }, 500);
-            }, 3000);
-        }
+        
+        // Protección básica contra inspección (simbólica)
+        setInterval(() => {
+            if (document.body.style.display === 'none' || 
+                document.documentElement.style.display === 'none') {
+                window.location.reload();
+            }
+        }, 1000);
+        
+        // Mostrar mensaje si se abre la consola
+        console.log = function() {
+            alert('La inspección de esta página está restringida');
+            return false;
+        };
     </script>
 </body>
 </html>
